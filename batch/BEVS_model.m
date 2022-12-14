@@ -56,6 +56,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
 
     %% simulation
     dxdt=zeros(length(x),1);
+    x(x<0)=0; % for stability
 
     tot_cells_1stw=sum(x(5:11));
     tot_cells_2ndw=sum(x(205:211));
@@ -258,9 +259,9 @@ function dxdt = BEVS_model(t,x,BacN,par)
     %% Intracellular species
     % replication, transcription and translation activation functions
     f_repl=(0.5+0.5*tanh((t-tau_repl_on)/0.3)).*(0.5+0.5*tanh((tau_repl_end-t)/1));
-    f_DIE1=(0.5+0.5*tanh((t-tau_DIE1_on)/0.3)).*(0.5+0.5*tanh((tau_repl_end-t)/1.1)); 
-    f_polh=(0.5+0.5*tanh((t-tau_polh_on)/0.3)).*(0.5+0.5*tanh((tau_repl_end-t)/1.1)); 
-    f_p10=(0.5+0.5*tanh((t-tau_p10_on)/0.3)).*(0.5+0.5*tanh((tau_repl_end-t)/1.1)); 
+    f_DIE1=(0.5+0.5*tanh((t-tau_DIE1_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end-t)/1.1)); 
+    f_polh=(0.5+0.5*tanh((t-tau_polh_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end-t)/1.1)); 
+    f_p10=(0.5+0.5*tanh((t-tau_p10_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end-t)/1.1)); 
 
     for i =1:7 % i denotes the type of infected cell
         if x(i+4)>1e-16
@@ -279,6 +280,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     kd_rna*x(20+(i-1)*22)-k_death1(i)*x(20+(i-1)*22); % cap mRNA
                 dxdt(21+(i-1)*22)=k_p10/bp_goi_prod*f_p10*(x(17+(i-1)*22)+x(22+(i-1)*22))-...
                     kd_rna*(x(21+(i-1)*22))-k_death1(i)*x(21+(i-1)*22); % transgene mRNA
+                
             else % TwoBac    
                 dxdt(19+(i-1)*22)=k_polh/bp_rep78*f_polh*x(15+(i-1)*22)-...
                     kd_rna*(x(19+(i-1)*22))-k_death1(i)*x(19+(i-1)*22); % rep mRNA

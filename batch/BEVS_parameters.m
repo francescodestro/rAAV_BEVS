@@ -1,6 +1,6 @@
 function par = BEVS_parameters()
     
-    scaling=1e6; % don't change
+    scaling=1e6; % % scaling parameter for numerical stability - don't change
     
     % cell growth and death
     mu=0.028; % 1/h
