@@ -2,6 +2,12 @@
 
 v1: batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems
 
+Files:
+- run_simulation.m: external wrapper to be used for setting inputs and running simulation
+- BEVS_simulation.m: function called by external wrapper to run simulation
+- BEVS_parameters.m: function containing model parameters
+- BEVS_model.m: function containing model equations
+
 Input: 
 - System type (TwoBac/ThreeBac)
 - Cell density at time of infection
