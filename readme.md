@@ -1,4 +1,4 @@
-# Model for baculovirus infection and rAAV infection 
+# Model for baculovirus infection and rAAV production 
 
 v1: batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems
 
