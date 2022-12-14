@@ -8,7 +8,8 @@ Inputs:
 - Multeplicity of infection
 - Simulation duration
 
-Output: state vector
+Output: 
+- State vector at time intervals of 0.1 h
 
 How to cite: Destro, F., Cecchini, S., Kanter, J.M., Barone, P.W., Srinivasan, P., Springs, S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023).   Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. Submitted
 
