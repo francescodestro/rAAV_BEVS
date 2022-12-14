@@ -92,7 +92,7 @@ x(4) = goiBV virion concentration [#/mL]
 Expressed as total concentration in the system [#/mL], calculated as concentration per cell multiplied by cell density <br>
 Indexes are reported for the first wave. For the second wave, add 200 to each index. <br>
 <br>
-x(12+(j-1)*22) =  of repBV bound to receptors of viable j [#/mL]  <br>
+x(12+(j-1)*22) = repBV bound to receptors of viable j [#/mL]  <br>
 x(13+(j-1)*22) = capBV bound to receptors of viable j [#/mL]  <br>
 x(14+(j-1)*22) = goiBV bound to receptors of viable j [#/mL]  <br>
 x(15+(j-1)*22) = repBV DNA in nucleus of viable j [#/mL] <br>
