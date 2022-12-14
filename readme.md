@@ -50,13 +50,13 @@ x(22+(j-1)*22) = transgene copies in viable j [#/mL]  <br>
 x(23+(j-1)*22) = Rep78 in viable j [#/mL]  <br>
 x(24+(j-1)*22) = Rep52 in viable j [#/mL]  <br>
 x(25+(j-1)*22) = empty rAAV capsids in viable j [#/mL]  <br>
-x(26+(j-1)*20)) = GOI protein in viable j [#/mL]  <br>
+x(26+(j-1)*20) = GOI protein in viable j [#/mL]  <br>
 x(27+(j-1)*22) = filled rAAV capsids in viable j [#/mL]  <br>
-x(29+(j-1)*22)) = transgene copies in nonviable j [#/mL]  <br>
-x(30+(j-1)*22)) = Rep78 in nonviable j [#/mL]  <br>
-x(31+(j-1)*22)) = Rep52 in nonviable j [#/mL]  <br>
-x(32+(j-1)*22)) = empty rAAV capsids in nonviable j [#/mL]  <br>
-x(33+(j-1)*22)) = filled rAAV capsids in nonviable j [#/mL]  <br>
+x(29+(j-1)*22) = transgene copies in nonviable j [#/mL]  <br>
+x(30+(j-1)*22) = Rep78 in nonviable j [#/mL]  <br>
+x(31+(j-1)*22) = Rep52 in nonviable j [#/mL]  <br>
+x(32+(j-1)*22) = empty rAAV capsids in nonviable j [#/mL]  <br>
+x(33+(j-1)*22) = filled rAAV capsids in nonviable j [#/mL]  <br>
 
 ### ThreeBac
 Index j refers to: <br>
@@ -100,10 +100,10 @@ x(22+(j-1)*22) = transgene copies in viable j [#/mL]  <br>
 x(23+(j-1)*22) = Rep78 in viable j [#/mL]  <br>
 x(24+(j-1)*22) = Rep52 in viable j [#/mL]  <br>
 x(25+(j-1)*22) = empty rAAV capsids in viable j [#/mL]  <br>
-x(26+(j-1)*20)) = GOI protein in viable j [#/mL]  <br>
+x(26+(j-1)*20) = GOI protein in viable j [#/mL]  <br>
 x(27+(j-1)*22) = filled rAAV capsids in viable j [#/mL]  <br>
-x(29+(j-1)*22)) = transgene copies in nonviable j [#/mL]  <br>
-x(30+(j-1)*22)) = Rep78 in nonviable j [#/mL]  <br>
-x(31+(j-1)*22)) = Rep52 in nonviable j [#/mL]  <br>
-x(32+(j-1)*22)) = empty rAAV capsids in nonviable j [#/mL]  <br>
-x(33+(j-1)*22)) = filled rAAV capsids in nonviable j [#/mL]  <br>
+x(29+(j-1)*22) = transgene copies in nonviable j [#/mL]  <br>
+x(30+(j-1)*22) = Rep78 in nonviable j [#/mL]  <br>
+x(31+(j-1)*22) = Rep52 in nonviable j [#/mL]  <br>
+x(32+(j-1)*22) = empty rAAV capsids in nonviable j [#/mL]  <br>
+x(33+(j-1)*22) = filled rAAV capsids in nonviable j [#/mL]  <br>
