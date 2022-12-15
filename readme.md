@@ -20,7 +20,7 @@ Output:
 How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini, S., Kanter, J.M., S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023). Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. Submitted.
 
 ## State vector legend
-The legend of the state vector for TwoBac and ThreeBac simulations follows. The indexing of the state vector is organized in modules, consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac. More computationally efficient implementations can be developed, with a more complex indexing of the state vector.
+The legend of the state vector for TwoBac and ThreeBac simulations follows. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac. More computationally efficient implementations can be developed, with a more complex indexing of the state vector.
 
 ### TwoBac
 Index j refers to: <br>
