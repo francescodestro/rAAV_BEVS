@@ -23,10 +23,10 @@ How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini
 The legend of the state vector for TwoBac and ThreeBac simulations follows. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac. More computationally efficient implementations can be developed, with a more complex indexing of the state vector.
 
 ### TwoBac
-Index j refers to: <br>
-1: cells infected by repcapBV <br>
-3: cells infected by goiBV <br>
-5: cells infected by repcapBV and goiBV <br>
+Index `j` refers to: <br>
+`j=1`: cells infected by repcapBV <br>
+`j=3`: cells infected by goiBV <br>
+`j=5`: cells infected by repcapBV and goiBV <br>
 
 <strong> Cells concentration </strong>  <br>
 <br>
@@ -65,14 +65,14 @@ Indexes are reported for the first wave. For the second wave, add 200 to each in
 `x(33+(j-1)*22)` = filled rAAV capsids in nonviable j [#/mL]  <br>
 
 ### ThreeBac
-Index j refers to: <br>
-1: cells infected by repBV <br>
-2: cells infected by capBV <br>
-3: cells infected by goiBV <br>
-4: cells infected by repBV and capBV <br>
-5: cells infected by repBV and goiBV <br>
-6: cells infected by goiBV and capBV <br>
-7: cells infected by repBV, capBV and goiBV  <br>
+Index `j` refers to: <br>
+`j=1`: cells infected by repBV <br>
+`j=2`: cells infected by capBV <br>
+`j=3`: cells infected by goiBV <br>
+`j=4`: cells infected by repBV and capBV <br>
+`j=5`: cells infected by repBV and goiBV <br>
+`j=6`: cells infected by goiBV and capBV <br>
+`j=7`: cells infected by repBV, capBV and goiBV  <br>
 
 <strong> Cells concentration </strong>  <br>
 <br>
