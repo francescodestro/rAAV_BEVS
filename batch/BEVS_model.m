@@ -86,11 +86,6 @@ function dxdt = BEVS_model(t,x,BacN,par)
         k_bind2=0;
         k_bind02=0;
     end
-    if t>2*tau_rel_on
-        k_bind2=0;
-        k_bind02=0;
-        k_bind0=0;
-    end
     
 
     %% death rates calculation
