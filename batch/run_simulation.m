@@ -9,7 +9,6 @@ MOI(3)=3; % MOI: capBV (ThreeBac)
 Dt=72; % simulation duration [h]
 C0=2e6; % viable cells concentration at time of infection [#/mL]
 
-
 [t,x] = BEVS_simulation(BacN,MOI,C0,Dt);
 
 % output
@@ -19,4 +18,3 @@ for i=1:7
     filled=filled+x(:,27+(i-1)*22)+x(:,33+(i-1)*22);
     empty=empty+x(:,25+(i-1)*22)+x(:,32+(i-1)*22);
 end
-

@@ -1,5 +1,4 @@
 function dxdt = BEVS_model(t,x,BacN,par)
-    
     %% parameters
     k_bind0=par(1);
     mu=par(2);
@@ -86,7 +85,6 @@ function dxdt = BEVS_model(t,x,BacN,par)
         k_bind2=0;
         k_bind02=0;
     end
-    
 
     %% death rates calculation
     % cells death rate transition 
@@ -104,7 +102,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
             k_death1(i)=k_deathT;
         end
         if x(204+i)>1e-6
-            k_death2(i)=k_deathT*(0.5+0.5*tanh((tau_L+18-t)/0.3))+...
+            k_death2(i)=k_deathT*(0.5+0.5*tanh((tau_L+tau_rel_on-t)/0.3))+...
                 (k_deathI(1)*max(1,log((x(215+(i-1)*22)+x(216+(i-1)*22)+...
                     x(217+(i-1)*22)/x(204+i)*scaling+1e-16)))+...
                 0*max(0,log(x(223+(i-1)*22)/x(204+i)*scaling+1e-16))+...
@@ -127,6 +125,14 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     release_rep=release_rep+x(4+i)*k_rel*x(15+(i-1)*22)/total_dna;
                     release_cap=release_cap+x(4+i)*k_rel*x(16+(i-1)*22)/total_dna;
                     release_goi=release_goi+x(4+i)*k_rel*x(17+(i-1)*22)/total_dna;
+                end
+            end
+            if x(204+i)>0
+                total_dna=x(215+(i-1)*22)+x(216+(i-1)*22)+x(217+(i-1)*22);
+                if total_dna>0
+                    release_rep=release_rep+x(204+i)*k_rel*x(215+(i-1)*22)/total_dna;
+                    release_cap=release_cap+x(204+i)*k_rel*x(216+(i-1)*22)/total_dna;
+                    release_goi=release_goi+x(204+i)*k_rel*x(217+(i-1)*22)/total_dna;
                 end
             end
         end
@@ -519,7 +525,5 @@ function dxdt = BEVS_model(t,x,BacN,par)
             dxdt(232+(i-1)*22) = k_death2(i)*x(225+(i-1)*22); % empty capsids conc.
             dxdt(233+(i-1)*22) = k_death2(i)*x(227+(i-1)*22); % filled capsids conc.
         end
-
     end
-
 end

@@ -27,7 +27,7 @@ par=BEVS_parameters();
 scaling=par(35);
 indexes=[];
 for i=1:7
-    indexes=[indexes [15:27 29:33]+(i-1)*22];
+    indexes=[indexes [15:27 29:33 215:227 229:233]+(i-1)*22];
 end
 x(:,indexes)=x(:,indexes)*scaling;
 
