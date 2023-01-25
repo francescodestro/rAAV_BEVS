@@ -127,7 +127,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     release_goi=release_goi+x(4+i)*k_rel*x(17+(i-1)*22)/total_dna;
                 end
             end
-            if t>tau_rel_on 
+            if t>2*tau_rel_on 
                 if x(204+i)>0
                     total_dna=x(215+(i-1)*22)+x(216+(i-1)*22)+x(217+(i-1)*22);
                     if total_dna>0
