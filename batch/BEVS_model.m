@@ -31,7 +31,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     tau_repl_on=par(29);
     K_encaps_coeff=par(30);
 
-    % 3-Bac parameters
+    % ThreeBac parameters
     tau_DIE1_on=par(31);
     k_DIE1=par(32);
     tau_rel_on=par(33);
@@ -519,7 +519,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
             dxdt(227+(i-1)*22)=r_pack-k_death2(i)*x(227+(i-1)*22); 
 
             % nonviable cells balances
-            dxdt(228+(i-1)*22) = k_death2(i)*x(4+i); % number of nonviable cells
+            dxdt(228+(i-1)*22) = k_death2(i)*x(204+i); % number of nonviable cells
             dxdt(229+(i-1)*22) = k_death2(i)*x(222+(i-1)*22)-...
                 kd_dna*x(229+(i-1)*22); % number of GOI copies in nonviable cells
             dxdt(230+(i-1)*22) = k_death2(i)*x(223+(i-1)*22)-kd_rep*(x(230+(i-1)*22)); % rep78 protein conc.
