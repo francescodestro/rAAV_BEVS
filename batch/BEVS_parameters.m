@@ -28,15 +28,15 @@ function par = BEVS_parameters()
     tau_RNA_end=38; 
 
     % translation
-    k_transl=10^9.4662; 
-    K_transl=10^4.4358;
+    k_transl=2.94e9; 
+    K_transl=2.74e4;
 
     % transgene amplification
-    Kgoi_rep=10.^6.9768; 
-    k_goi_repl=10.^4.1389; % #/cell/h 
+    k_goi_repl=3.63e7; % #/cell/h 
+    Kgoi_rep=9.39e6; 
 
     % encapsidation
-    k_pack=10.^2.9165; 
+    k_pack=831.09; 
     Kencaps_coeff=5;    
 
     % degradation parameters
