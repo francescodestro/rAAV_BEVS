@@ -2,7 +2,7 @@
 
 clc, clear, close all
 
-BacN=3; % 2 (TwoBac) or 3 (ThreeBac)
+BacN=2; % 2 (TwoBac) or 3 (ThreeBac)
 MOI(1)=3; % MOI: goiBV
 MOI(2)=3; % MOI: repcapBV (TwoBac) or repBV (ThreeBac)
 MOI(3)=3; % MOI: capBV (ThreeBac)

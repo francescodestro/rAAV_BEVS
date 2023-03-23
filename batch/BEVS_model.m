@@ -24,8 +24,8 @@ function dxdt = BEVS_model(t,x,BacN,par)
     kd_gfp=par(22);
     tau_L=par(23);
     k_deathI=par(24);
-    bp_goi=par(25);
-    bp_goi_prod=par(26);
+    bp_vg=par(25);
+    bp_goi=par(26);
     tau_bind_decay=par(27);
     beta_decay=par(28);
     tau_repl_on=par(29);
@@ -41,6 +41,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     Kgoi_dna=0.1; 
     bp_rep78=1863;
     bp_rep52=1191;
+    bp_vg_ref=2700;
     
     if BacN==2
         bp_avg=0.5*(bp_rep78+bp_rep52);
@@ -286,7 +287,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     kd_rna*(x(19+(i-1)*22))-k_death1(i)*x(19+(i-1)*22); % rep52 mRNA
                 dxdt(20+(i-1)*22)=k_polh/bp_cap*f_polh*x(16+(i-1)*22)-...
                     kd_rna*x(20+(i-1)*22)-k_death1(i)*x(20+(i-1)*22); % cap mRNA
-                dxdt(21+(i-1)*22)=k_p10/bp_goi_prod*f_p10*(x(17+(i-1)*22)+x(22+(i-1)*22))-...
+                dxdt(21+(i-1)*22)=k_p10/bp_goi*f_p10*(x(17+(i-1)*22)+x(22+(i-1)*22))-...
                     kd_rna*(x(21+(i-1)*22))-k_death1(i)*x(21+(i-1)*22); % transgene mRNA
                 
             else % TwoBac    
@@ -294,7 +295,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     kd_rna*(x(19+(i-1)*22))-k_death1(i)*x(19+(i-1)*22); % rep mRNA
                 dxdt(20+(i-1)*22)=k_p10/bp_cap*f_p10*x(15+(i-1)*22)-...
                     kd_rna*x(20+(i-1)*22)-k_death1(i)*x(20+(i-1)*22); % cap mRNA
-                dxdt(21+(i-1)*22)=k_p10/bp_goi_prod*f_p10*(x(17+(i-1)*22)+x(22+(i-1)*22))-...
+                dxdt(21+(i-1)*22)=k_p10/bp_goi*f_p10*(x(17+(i-1)*22)+x(22+(i-1)*22))-...
                     kd_rna*(x(21+(i-1)*22))-k_death1(i)*x(21+(i-1)*22); % transgene mRNA
             end
 
@@ -316,16 +317,16 @@ function dxdt = BEVS_model(t,x,BacN,par)
             dxdt(23+(i-1)*22)=r(1)/bp78_transl-kd_rep*(x(23+(i-1)*22))-k_death1(i)*x(23+(i-1)*22); % rep78
             dxdt(24+(i-1)*22)=r(2)/bp52_transl-kd_rep*(x(24+(i-1)*22))-k_death1(i)*x(24+(i-1)*22); % rep52
             dxdt(25+(i-1)*22)=r(3)/bp_cap/60-k_death1(i)*x(25+(i-1)*22); % capsids
-            dxdt(26+(i-1)*22)=r(4)/bp_goi_prod-kd_gfp*(x(26+(i-1)*22))-k_death1(i)*x(26+(i-1)*22); % GFP
+            dxdt(26+(i-1)*22)=r(4)/bp_goi-kd_gfp*(x(26+(i-1)*22))-k_death1(i)*x(26+(i-1)*22); % GFP
 
             % transgene amplification
-            dxdt(22+(i-1)*22)=k_goi_repl*2700/bp_goi/scaling*x(i+4)*...
+            dxdt(22+(i-1)*22)=k_goi_repl*bp_vg_ref/bp_vg/scaling*x(i+4)*...
                 x(23+(i-1)*22)/(Kgoi_rep/scaling*x(i+4)+x(23+(i-1)*22))-...
                 kd_dna*x(22+(i-1)*22)-k_death1(i)*x(22+(i-1)*22);
 
             % encapsidation
             Kencaps=min(x(22+(i-1)*22),x(25+(i-1)*22))*K_encaps_coeff+1;
-            r_pack=k_pack/bp_goi*min(x(22+(i-1)*22),x(25+(i-1)*22))*...
+            r_pack=k_pack/bp_vg*min(x(22+(i-1)*22),x(25+(i-1)*22))*...
                 x(24+(i-1)*22)/(x(24+(i-1)*22)+Kencaps);
 
             dxdt(25+(i-1)*22)=dxdt(25+(i-1)*22)-r_pack;
@@ -462,14 +463,14 @@ function dxdt = BEVS_model(t,x,BacN,par)
                     kd_rna*(x(219+(i-1)*22))-k_death2(i)*x(219+(i-1)*22); % rep52 mRNA
                 dxdt(220+(i-1)*22)=k_polh/bp_cap*f_polh*x(216+(i-1)*22)-...
                     kd_rna*x(220+(i-1)*22)-k_death2(i)*x(220+(i-1)*22); % VP mRNA
-                dxdt(221+(i-1)*22)=k_p10/bp_goi_prod*f_p10*(x(217+(i-1)*22)+x(222+(i-1)*22))-...
+                dxdt(221+(i-1)*22)=k_p10/bp_goi*f_p10*(x(217+(i-1)*22)+x(222+(i-1)*22))-...
                     kd_rna*(x(221+(i-1)*22))-k_death2(i)*x(221+(i-1)*22); % transgene mRNA
             else % TwoBac
                 dxdt(219+(i-1)*22)=k_polh/bp_rep52*f_polh*x(215+(i-1)*22)-...
                     kd_rna*(x(219+(i-1)*22))-k_death2(i)*x(219+(i-1)*22); % rep52 mRNA
                 dxdt(220+(i-1)*22)=k_p10/bp_cap*f_p10*x(215+(i-1)*22)-...
                     kd_rna*x(220+(i-1)*22)-k_death2(i)*x(220+(i-1)*22); % VP mRNA
-                dxdt(221+(i-1)*22)=k_p10/bp_goi_prod*f_p10*(x(217+(i-1)*22)+x(222+(i-1)*22))-...
+                dxdt(221+(i-1)*22)=k_p10/bp_goi*f_p10*(x(217+(i-1)*22)+x(222+(i-1)*22))-...
                     kd_rna*(x(221+(i-1)*22))-k_death2(i)*x(221+(i-1)*22); % transgene mRNA
             end
     
@@ -498,11 +499,11 @@ function dxdt = BEVS_model(t,x,BacN,par)
             dxdt(224+(i-1)*22)=r(2)/bp_rep52-kd_rep*(x(224+(i-1)*22))-...
                 k_death2(i)*x(224+(i-1)*22); % rep52
             dxdt(225+(i-1)*22)=r(3)/bp_cap/60-k_death2(i)*x(225+(i-1)*22); % capsids
-            dxdt(226+(i-1)*22)=r(4)/bp_goi_prod-kd_gfp*(x(226+(i-1)*22))-...
+            dxdt(226+(i-1)*22)=r(4)/bp_goi-kd_gfp*(x(226+(i-1)*22))-...
                 k_death2(i)*x(226+(i-1)*22); % GFP
             
             % transgene amplification 
-            dxdt(222+(i-1)*22)=k_goi_repl*2700/bp_goi/scaling*x(i+204)*...
+            dxdt(222+(i-1)*22)=k_goi_repl*bp_vg_ref/bp_vg/scaling*x(i+204)*...
                 (x(217+(i-1)*22)+x(222+(i-1)*22))/...
                 (Kgoi_dna/scaling*x(i+204)+x(217+(i-1)*22)+x(222+(i-1)*22))*...
                 x(223+(i-1)*22)/...
@@ -511,7 +512,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
 
             % transgene encapsidation
             Kencaps=min(x(222+(i-1)*22),x(225+(i-1)*22))*5+1;
-            r_pack=k_pack/bp_goi*min(x(222+(i-1)*22),x(225+(i-1)*22))*...
+            r_pack=k_pack/bp_vg*min(x(222+(i-1)*22),x(225+(i-1)*22))*...
                 x(224+(i-1)*22)/(x(224+(i-1)*22)+Kencaps/scaling*x(i+204));
 
             dxdt(225+(i-1)*22)=dxdt(225+(i-1)*22)-r_pack;

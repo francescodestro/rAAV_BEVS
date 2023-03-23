@@ -18,7 +18,7 @@ function par = BEVS_parameters()
     % BV replication
     tau_repl_onset=6;
     tau_repl_end=18;
-    k_repl=0.7303; %1/h
+    k_repl=0.7318; %1/h
 
     % transcription parameters
     k_polh=607.89; % bp/h 
@@ -26,6 +26,7 @@ function par = BEVS_parameters()
     tau_polh_onset=18; 
     tau_p10_onset=15; 
     tau_RNA_end=38; 
+
     % translation
     k_transl=10^9.4662; 
     K_transl=10^4.4358;
@@ -35,8 +36,8 @@ function par = BEVS_parameters()
     k_goi_repl=10.^4.1389; % #/cell/h 
 
     % encapsidation
-    Kencaps_coeff=5;    
     k_pack=10.^2.9165; 
+    Kencaps_coeff=5;    
 
     % degradation parameters
     kd_rep=0.03;% 1/h 
@@ -51,8 +52,8 @@ function par = BEVS_parameters()
     tau_release_onset=18;
     release=9.8;
 
-    bp_goi=2700;
-    bp_goi_prod=700;
+    bp_vg=2700;
+    bp_goi=700;
 
     %%
     par(1)=k_bind0;
@@ -79,8 +80,8 @@ function par = BEVS_parameters()
     par(22)=kd_gfp;
     par(23)=tau_L;
     par(24)=k_deathI;
-    par(25)=bp_goi;
-    par(26)=bp_goi_prod;
+    par(25)=bp_vg;
+    par(26)=bp_goi;
     par(27)=tau_bind_decay;
     par(28)=beta_decay;
     par(29)=tau_repl_onset;
