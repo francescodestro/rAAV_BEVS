@@ -11,7 +11,7 @@ Files:
 Input: 
 - System type (TwoBac/ThreeBac)
 - Cell density at time of infection
-- Multeplicity of infection
+- Multiplicity of infection
 - Simulation duration
 
 Output: 
