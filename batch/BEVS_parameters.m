@@ -32,8 +32,8 @@ function par = BEVS_parameters()
     K_transl=2.74e4;
 
     % transgene amplification
-    k_goi_repl=3.63e7; % #/cell/h 
-    Kgoi_rep=9.39e6; 
+    k_ampl=3.63e7; % #/cell/h 
+    Kampl_rep=9.39e6; 
 
     % encapsidation
     k_pack=831.09; 
@@ -49,8 +49,8 @@ function par = BEVS_parameters()
     % 3-Bac parameters
     tau_DIE1_onset=8;
     k_DIE1=k_polh/10;
-    tau_release_onset=18;
-    release=9.8;
+    tau_rel_onset=18;
+    k_rel=9.8;
 
     bp_vg=2700;
     bp_goi=700;
@@ -73,8 +73,8 @@ function par = BEVS_parameters()
     par(15)=k_transl;
     par(16)=K_transl;
     par(17)=k_pack;
-    par(18)=Kgoi_rep;
-    par(19)=k_goi_repl;
+    par(18)=Kampl_rep;
+    par(19)=k_ampl;
     par(20)=kd_rep;
     par(21)=kd_dna;
     par(22)=kd_gfp;
@@ -88,8 +88,8 @@ function par = BEVS_parameters()
     par(30)=Kencaps_coeff;
     par(31)=tau_DIE1_onset;
     par(32)=k_DIE1;
-    par(33)=tau_release_onset;
-    par(34)=release;
+    par(33)=tau_rel_onset;
+    par(34)=k_rel;
     par(35)=scaling;
 
 end

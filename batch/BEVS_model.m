@@ -17,8 +17,8 @@ function dxdt = BEVS_model(t,x,BacN,par)
     k_transl=par(15);
     K_transl=par(16);
     k_pack=par(17);
-    Kgoi_rep=par(18);
-    k_goi_repl=par(19);
+    Kampl_rep=par(18);
+    k_ampl=par(19);
     kd_rep=par(20);
     kd_dna=par(21);
     kd_gfp=par(22);
@@ -41,7 +41,6 @@ function dxdt = BEVS_model(t,x,BacN,par)
     Kgoi_dna=0.1; 
     bp_rep78=1863;
     bp_rep52=1191;
-    bp_vg_ref=2700;
     
     if BacN==2
         bp_avg=0.5*(bp_rep78+bp_rep52);
@@ -320,8 +319,9 @@ function dxdt = BEVS_model(t,x,BacN,par)
             dxdt(26+(i-1)*22)=r(4)/bp_goi-kd_gfp*(x(26+(i-1)*22))-k_death1(i)*x(26+(i-1)*22); % GFP
 
             % transgene amplification
-            dxdt(22+(i-1)*22)=k_goi_repl*bp_vg_ref/bp_vg/scaling*x(i+4)*...
-                x(23+(i-1)*22)/(Kgoi_rep/scaling*x(i+4)+x(23+(i-1)*22))-...
+            f_ampl=min(max(x(17+(i-1)*22),0),1);
+            dxdt(22+(i-1)*22)=k_ampl/bp_vg/scaling*f_ampl*x(i+4)*...
+                x(23+(i-1)*22)/(Kampl_rep/scaling*x(i+4)+x(23+(i-1)*22))-...
                 kd_dna*x(22+(i-1)*22)-k_death1(i)*x(22+(i-1)*22);
 
             % encapsidation
@@ -503,11 +503,12 @@ function dxdt = BEVS_model(t,x,BacN,par)
                 k_death2(i)*x(226+(i-1)*22); % GFP
             
             % transgene amplification 
-            dxdt(222+(i-1)*22)=k_goi_repl*bp_vg_ref/bp_vg/scaling*x(i+204)*...
+            f_ampl=min(max(x(217+(i-1)*22),0),1);
+            dxdt(222+(i-1)*22)=k_ampl/bp_vg/scaling*f_ampl*x(i+204)*...
                 (x(217+(i-1)*22)+x(222+(i-1)*22))/...
                 (Kgoi_dna/scaling*x(i+204)+x(217+(i-1)*22)+x(222+(i-1)*22))*...
                 x(223+(i-1)*22)/...
-                (Kgoi_rep/scaling*x(i+204)+x(223+(i-1)*22))-kd_dna*x(222+(i-1)*22)-...
+                (Kampl_rep/scaling*x(i+204)+x(223+(i-1)*22))-kd_dna*x(222+(i-1)*22)-...
                 k_death2(i)*x(222+(i-1)*22);
 
             % transgene encapsidation
