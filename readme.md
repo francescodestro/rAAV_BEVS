@@ -17,7 +17,7 @@ Input:
 Output: 
 - State vector at time intervals of 0.1 h
 
-How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini, S., Kanter, J.M., S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023). Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. Submitted.
+How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini, S., Kanter, J.M., S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023). Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. _Mol. Ther. Methods Clin. Dev._ In press.
 
 ## License
 The code in this repository is provided under a CC BY-NC-ND 4.0 license, as detailed in the `LICENSE` file.
