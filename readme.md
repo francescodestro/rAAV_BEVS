@@ -1,4 +1,4 @@
-# Mechanistic model for rAAV manufacturing in the baculovirus expression vector system 
+# Mechanistic model for rAAV manufacturing with the baculovirus expression vector system 
 
 v1: batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. The model simulates baculovirus binding, baculovirus transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
 
