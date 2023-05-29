@@ -1,6 +1,8 @@
 # Mechanistic model for rAAV manufacturing with the baculovirus expression vector system 
 
-v1: batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. The model simulates baculovirus binding, baculovirus transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
+Batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. 
+
+This code simulates baculovirus binding, baculovirus transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
 
 Files:
 - `run_simulation.m`: external wrapper to be used for setting inputs and running simulation
@@ -23,7 +25,7 @@ How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini
 The code in this repository is provided under a CC BY-NC-ND 4.0 license, as detailed in the `LICENSE` file.
 
 ## State vector legend
-The legend of the state vector for TwoBac and ThreeBac simulations follows. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac. More computationally efficient implementations can be developed, with a more complex indexing of the state vector.
+This section outlines the legend of the state vector for TwoBac and ThreeBac simulations. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac.
 
 ### TwoBac
 Index `j` refers to: <br>
