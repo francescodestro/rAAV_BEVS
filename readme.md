@@ -2,7 +2,7 @@
 
 Batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. 
 
-This code simulates baculovirus binding, baculovirus transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
+This code simulates baculovirus infection and rAAV maturation in insect cells. The following phenomena are considered in the model: baculovirus binding, transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
 
 Files:
 - `run_simulation.m`: external wrapper to be used for setting inputs and running simulation
