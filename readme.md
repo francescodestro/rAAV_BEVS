@@ -1,6 +1,8 @@
-# Mechanistic model for rAAV manufacturing in the baculovirus expression vector system 
+# Mechanistic model for rAAV manufacturing with the baculovirus expression vector system 
 
-v1: batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. The model simulates baculovirus binding, baculovirus transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
+Batch model (synchronous infection, up to two waves) for TwoBac (Smith et al., 2009) and ThreeBac (Urabe et al., 2002) systems. 
+
+This code simulates baculovirus infection and rAAV maturation in insect cells. The following phenomena are considered in the model: baculovirus binding, transport to nucleus and replication, release of budded baculovirus, transcription and translation of AAV genes, rAAV capsid formation, Rep protein synthesis, transgene rescue and amplification, and transgene encapsidation.
 
 Files:
 - `run_simulation.m`: external wrapper to be used for setting inputs and running simulation
@@ -11,19 +13,19 @@ Files:
 Input: 
 - System type (TwoBac/ThreeBac)
 - Cell density at time of infection
-- Multeplicity of infection
+- Multiplicity of infection
 - Simulation duration
 
 Output: 
 - State vector at time intervals of 0.1 h
 
-How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini, S., Kanter, J.M., S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023). Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. Submitted.
+How to cite: Destro, F., Barone, P. W., Srinivasan, P., Springs, S. L., Cecchini, S., Kanter, J.M., S. L., Kotin, R. M., Sinskey, A. J. and Braatz, R. D. (2023). Mechanistic modeling explains the production dynamics of recombinant adeno-associated virus with the baculovirus expression vector system. _Mol Ther Methods Clin Dev_ In press.
 
 ## License
 The code in this repository is provided under a CC BY-NC-ND 4.0 license, as detailed in the `LICENSE` file.
 
 ## State vector legend
-The legend of the state vector for TwoBac and ThreeBac simulations follows. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac. More computationally efficient implementations can be developed, with a more complex indexing of the state vector.
+This section outlines the legend of the state vector for TwoBac and ThreeBac simulations. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac.
 
 ### TwoBac
 Index `j` refers to: <br>
