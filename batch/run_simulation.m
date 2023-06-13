@@ -1,5 +1,4 @@
-% Wrapper for running baculovirus infection and rAAV production model
-
+% Wrapper for running the baculovirus infection and rAAV production model
 clc, clear, close all
 
 BacN=2; % 2 (TwoBac) or 3 (ThreeBac)
@@ -8,6 +7,8 @@ MOI(2)=3; % MOI: repcapBV (TwoBac) or repBV (ThreeBac)
 MOI(3)=3; % MOI: capBV (ThreeBac)
 Dt=72; % simulation duration [h]
 C0=2e6; % viable cells concentration at time of infection [#/mL]
+        % hp: no nutrients limitations at time of infection
+        %     the model does not consider density limitations that can occur for C0 > 5e6
 
 [t,x] = BEVS_simulation(BacN,MOI,C0,Dt);
 
