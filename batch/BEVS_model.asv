@@ -91,7 +91,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     k_death1=zeros(1,7);
     k_death2=zeros(1,7);
     for i=1:7
-        if x(4+i)>0
+        if x(4+i)>1e-6
             k_death1(i)=k_deathT*(0.5+0.5*tanh((tau_L-t)/0.3))+...
                 (k_deathI(1)*max(1,log((x(15+(i-1)*22)+x(16+(i-1)*22)+...
                     x(17+(i-1)*22))/x(4+i)*scaling+1e-16))+...
@@ -101,7 +101,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
         else
             k_death1(i)=k_deathT;
         end
-        if x(204+i)>0
+        if x(204+i)>1e-6
             k_death2(i)=k_deathT*(0.5+0.5*tanh((tau_L+tau_rel_on-t)/0.3))+...
                 (k_deathI(1)*max(1,log((x(215+(i-1)*22)+x(216+(i-1)*22)+...
                     x(217+(i-1)*22)/x(204+i)*scaling+1e-16)))+...
@@ -272,7 +272,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     f_p10=(0.5+0.5*tanh((t-tau_p10_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end-t)/1.1)); 
 
     for i =1:7 % i denotes the type of infected cell
-        if x(i+4)>0
+        if x(i+4)>1e-16
             % viral DNA replication
             dxdt(15+(i-1)*22)=dxdt(15+(i-1)*22)+k_repl*f_repl*x(15+(i-1)*22); % nuclear repcapBV DNA (TwoBac) or repBV DNA (ThreeBac) [#/mL]
             dxdt(16+(i-1)*22)=dxdt(16+(i-1)*22)+k_repl*f_repl*x(16+(i-1)*22);  % nuclear capBV DNA (ThreeBac) [#/mL]
@@ -449,7 +449,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     f_p10=(0.5+0.5*tanh((t-tau_p10_on-tau_rel_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end+tau_rel_on-t)/1.1)); % smooth transition
 
     for i =1:7
-        if x(i+204)>0
+        if x(i+204)>1e-16
             % viral DNA replication
             dxdt(215+(i-1)*22)=dxdt(215+(i-1)*22)+k_repl*f_repl*x(215+(i-1)*22); % nuclear rep DNA
             dxdt(216+(i-1)*22)=dxdt(216+(i-1)*22)+k_repl*f_repl*x(216+(i-1)*22);  % nuclear cap DNA
