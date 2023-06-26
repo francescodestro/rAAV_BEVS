@@ -50,7 +50,7 @@ function par = BEVS_parameters()
     tau_DIE1_onset=8;
     k_DIE1=k_polh/10;
     tau_rel_onset=18;
-    k_rel=1.5;%9.8;
+    k_rel=9.8;
 
     bp_vg=2700;
     bp_goi=700;
