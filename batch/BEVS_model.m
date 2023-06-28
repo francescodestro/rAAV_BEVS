@@ -272,7 +272,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     f_p10=(0.5+0.5*tanh((t-tau_p10_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end-t)/1.1)); 
 
     for i =1:7 % i denotes the type of infected cell
-        if x(i+4)>1e-16
+        if x(i+4)>1e-16 % replication, transcription, translation, amplification and encapsidation computed only for cells present in the system
             % viral DNA replication
             dxdt(15+(i-1)*22)=dxdt(15+(i-1)*22)+k_repl*f_repl*x(15+(i-1)*22); % nuclear repcapBV DNA (TwoBac) or repBV DNA (ThreeBac) [#/mL]
             dxdt(16+(i-1)*22)=dxdt(16+(i-1)*22)+k_repl*f_repl*x(16+(i-1)*22);  % nuclear capBV DNA (ThreeBac) [#/mL]
@@ -449,7 +449,7 @@ function dxdt = BEVS_model(t,x,BacN,par)
     f_p10=(0.5+0.5*tanh((t-tau_p10_on-tau_rel_on)/0.3)).*(0.5+0.5*tanh((tau_RNA_end+tau_rel_on-t)/1.1)); % smooth transition
 
     for i =1:7
-        if x(i+204)>1e-16
+        if x(i+204)>1e-16 % replication, transcription, translation, amplification and encapsidation computed only for cells present in the system
             % viral DNA replication
             dxdt(215+(i-1)*22)=dxdt(215+(i-1)*22)+k_repl*f_repl*x(215+(i-1)*22); % nuclear rep DNA
             dxdt(216+(i-1)*22)=dxdt(216+(i-1)*22)+k_repl*f_repl*x(216+(i-1)*22);  % nuclear cap DNA
