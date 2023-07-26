@@ -4,9 +4,9 @@ function par = BEVS_parameters()
     
     % cell growth and death
     mu=0.028; % 1/h
-    k_deathT=8e-5; % 1/h
-    k_deathI=0.0029;
-    tau_L=24;
+    k_deathT=8e-5; % uninfected cells death rate [1/h]
+    k_deathI=0.0029; % infected cells death rate [1/h]
+    tau_L=24; % infection age at which death kinetcs switches from k_deathT to  k_deathI [1/h]
     
     % binding and internalization
     tau_bind_decay=1.8;
@@ -44,7 +44,7 @@ function par = BEVS_parameters()
     kd_dna=0.01;%% 1/h 
     kd_gfp=3.2e-3; % 1/h 
     k_degrBV=7e-3; %1/h
-    kd_rna=0.061; % 
+    kd_rna=0.061; % 1/h
 
     % 3-Bac parameters
     tau_DIE1_onset=8;
