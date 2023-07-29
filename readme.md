@@ -28,18 +28,18 @@ The code in this repository is provided under a CC BY-NC-ND 4.0 license, as deta
 This section outlines the legend of the state vector for TwoBac and ThreeBac simulations. The indexing of the state vector is organized in modules consistent between TwoBac and ThreeBac, to access the variables in the output array more easily. As a result, several entries of the state vector are null, especially for TwoBac.
 
 ### TwoBac
-Index `j` refers to: <br>
-`j=1`: cells infected by repcapBV <br>
-`j=3`: cells infected by goiBV <br>
-`j=5`: cells infected by repcapBV and goiBV <br>
+Index `i` refers to: <br>
+`i=1`: cells infected by repcapBV <br>
+`i=3`: cells infected by goiBV <br>
+`i=5`: cells infected by repcapBV and goiBV <br>
 
 <strong> Cells concentration </strong>  <br>
 <br>
 `x(1)` = uninfected viable cells density (#/mL) <br>
-`x(4+j)`= concentration of viable j - first wave [#/mL]  <br>
-`x(28+(j-1)*22)` = concentration of nonviable j - first wave [#/mL]  
-`x(204+j)` = concentration of viable j - second wave [#/mL]  <br>
-`x(228+(j-1)*22)` = concentration of nonviable j - second wave [#/mL]  
+`x(4+i)`= concentration of viable i - first wave [#/mL]  <br>
+`x(28+(i-1)*22)` = concentration of nonviable i - first wave [#/mL]  
+`x(204+i)` = concentration of viable i - second wave [#/mL]  <br>
+`x(228+(i-1)*22)` = concentration of nonviable i - second wave [#/mL]  
 
 <strong> Virions </strong>  <br>
 <br>
@@ -50,42 +50,42 @@ Index `j` refers to: <br>
 Expressed as total concentration in the system [#/mL], calculated as concentration per cell multiplied by cell density <br>
 Indexes are reported for the first wave. For the second wave, add 200 to each index. <br>
 <br>
-`x(12+(j-1)*22)` = repcapBV bound to receptors of viable j [#/mL]  <br>
-`x(14+(j-1)*22)` = goiBV bound to receptors of viable j [#/mL]  <br>
-`x(15+(j-1)*22)` = repcapBV DNA in nucleus of viable j [#/mL] <br>
-`x(17+(j-1)*22)` = goiBV DNA in nucleus of viable j [#/mL] <br>
-`x(19+(j-1)*22)` = rep mRNA in viable j [#/mL]  <br>
-`x(20+(j-1)*22)` = cap mRNA in viable j [#/mL]  <br>
-`x(21+(j-1)*22)` = transgene mRNA in viable j [#/mL]  <br>
-`x(22+(j-1)*22)` = transgene copies in viable j [#/mL]  <br>
-`x(23+(j-1)*22)` = Rep78 in viable j [#/mL]  <br>
-`x(24+(j-1)*22)` = Rep52 in viable j [#/mL]  <br>
-`x(25+(j-1)*22)` = empty rAAV capsids in viable j [#/mL]  <br>
-`x(26+(j-1)*20)` = GOI protein in viable j [#/mL]  <br>
-`x(27+(j-1)*22)` = filled rAAV capsids in viable j [#/mL]  <br>
-`x(29+(j-1)*22)` = transgene copies in nonviable j [#/mL]  <br>
-`x(30+(j-1)*22)` = Rep78 in nonviable j [#/mL]  <br>
-`x(31+(j-1)*22)` = Rep52 in nonviable j [#/mL]  <br>
-`x(32+(j-1)*22)` = empty rAAV capsids in nonviable j [#/mL]  <br>
-`x(33+(j-1)*22)` = filled rAAV capsids in nonviable j [#/mL]  <br>
+`x(12+(i-1)*22)` = repcapBV bound to receptors of viable i [#/mL]  <br>
+`x(14+(i-1)*22)` = goiBV bound to receptors of viable i [#/mL]  <br>
+`x(15+(i-1)*22)` = repcapBV DNA in nucleus of viable i [#/mL] <br>
+`x(17+(i-1)*22)` = goiBV DNA in nucleus of viable i [#/mL] <br>
+`x(19+(i-1)*22)` = rep mRNA in viable i [#/mL]  <br>
+`x(20+(i-1)*22)` = cap mRNA in viable i [#/mL]  <br>
+`x(21+(i-1)*22)` = transgene mRNA in viable i [#/mL]  <br>
+`x(22+(i-1)*22)` = transgene copies in viable i [#/mL]  <br>
+`x(23+(i-1)*22)` = Rep78 in viable i [#/mL]  <br>
+`x(24+(i-1)*22)` = Rep52 in viable i [#/mL]  <br>
+`x(25+(i-1)*22)` = empty rAAV capsids in viable i [#/mL]  <br>
+`x(26+(i-1)*20)` = GOI protein in viable i [#/mL]  <br>
+`x(27+(i-1)*22)` = filled rAAV capsids in viable i [#/mL]  <br>
+`x(29+(i-1)*22)` = transgene copies in nonviable i [#/mL]  <br>
+`x(30+(i-1)*22)` = Rep78 in nonviable i [#/mL]  <br>
+`x(31+(i-1)*22)` = Rep52 in nonviable i [#/mL]  <br>
+`x(32+(i-1)*22)` = empty rAAV capsids in nonviable i [#/mL]  <br>
+`x(33+(i-1)*22)` = filled rAAV capsids in nonviable i [#/mL]  <br>
 
 ### ThreeBac
-Index `j` refers to: <br>
-`j=1`: cells infected by repBV <br>
-`j=2`: cells infected by capBV <br>
-`j=3`: cells infected by goiBV <br>
-`j=4`: cells infected by repBV and capBV <br>
-`j=5`: cells infected by repBV and goiBV <br>
-`j=6`: cells infected by goiBV and capBV <br>
-`j=7`: cells infected by repBV, capBV and goiBV  <br>
+Index `i` refers to: <br>
+`i=1`: cells infected by repBV <br>
+`i=2`: cells infected by capBV <br>
+`i=3`: cells infected by goiBV <br>
+`i=4`: cells infected by repBV and capBV <br>
+`i=5`: cells infected by repBV and goiBV <br>
+`i=6`: cells infected by goiBV and capBV <br>
+`i=7`: cells infected by repBV, capBV and goiBV  <br>
 
 <strong> Cells concentration </strong>  <br>
 <br>
 `x(1)` = uninfected viable cells density (#/mL) <br>
-`x(4+j)`= concentration of viable j - first wave [#/mL]  <br>
-`x(28+(j-1)*22)` = concentration of nonviable j - first wave [#/mL]  
-`x(204+j)` = concentration of viable j - second wave [#/mL]  <br>
-`x(228+(j-1)*22)` = concentration of nonviable j - second wave [#/mL]  
+`x(4+i)`= concentration of viable i - first wave [#/mL]  <br>
+`x(28+(i-1)*22)` = concentration of nonviable i - first wave [#/mL]  
+`x(204+i)` = concentration of viable i - second wave [#/mL]  <br>
+`x(228+(i-1)*22)` = concentration of nonviable i - second wave [#/mL]  
 
 <strong> Virions </strong>  <br>
 <br>
@@ -97,24 +97,24 @@ Index `j` refers to: <br>
 Expressed as total concentration in the system [#/mL], calculated as concentration per cell multiplied by cell density <br>
 Indexes are reported for the first wave. For the second wave, add 200 to each index. <br>
 <br>
-`x(12+(j-1)*22)` = repBV bound to receptors of viable j [#/mL]  <br>
-`x(13+(j-1)*22)` = capBV bound to receptors of viable j [#/mL]  <br>
-`x(14+(j-1)*22)` = goiBV bound to receptors of viable j [#/mL]  <br>
-`x(15+(j-1)*22)` = repBV DNA in nucleus of viable j [#/mL] <br>
-`x(16+(j-1)*22)` = capBV DNA in nucleus of viable j [#/mL] <br>
-`x(17+(j-1)*22)` = goiBV DNA in nucleus of viable j [#/mL] <br>
-`x(18+(j-1)*22)` = rep78 mRNA in viable j [#/mL]  <br>
-`x(19+(j-1)*22)` = rep52 mRNA in viable j [#/mL]  <br>
-`x(20+(j-1)*22)` = cap mRNA in viable j [#/mL]  <br>
-`x(21+(j-1)*22)` = transgene mRNA in viable j [#/mL]  <br>
-`x(22+(j-1)*22)` = transgene copies in viable j [#/mL]  <br>
-`x(23+(j-1)*22)` = Rep78 in viable j [#/mL]  <br>
-`x(24+(j-1)*22)` = Rep52 in viable j [#/mL]  <br>
-`x(25+(j-1)*22)` = empty rAAV capsids in viable j [#/mL]  <br>
-`x(26+(j-1)*20)` = GOI protein in viable j [#/mL]  <br>
-`x(27+(j-1)*22)` = filled rAAV capsids in viable j [#/mL]  <br>
-`x(29+(j-1)*22)` = transgene copies in nonviable j [#/mL]  <br>
-`x(30+(j-1)*22)` = Rep78 in nonviable j [#/mL]  <br>
-`x(31+(j-1)*22)` = Rep52 in nonviable j [#/mL]  <br>
-`x(32+(j-1)*22)` = empty rAAV capsids in nonviable j [#/mL]  <br>
-`x(33+(j-1)*22)` = filled rAAV capsids in nonviable j [#/mL]  <br>
+`x(12+(i-1)*22)` = repBV bound to receptors of viable i [#/mL]  <br>
+`x(13+(i-1)*22)` = capBV bound to receptors of viable i [#/mL]  <br>
+`x(14+(i-1)*22)` = goiBV bound to receptors of viable i [#/mL]  <br>
+`x(15+(i-1)*22)` = repBV DNA in nucleus of viable i [#/mL] <br>
+`x(16+(i-1)*22)` = capBV DNA in nucleus of viable i [#/mL] <br>
+`x(17+(i-1)*22)` = goiBV DNA in nucleus of viable i [#/mL] <br>
+`x(18+(i-1)*22)` = rep78 mRNA in viable i [#/mL]  <br>
+`x(19+(i-1)*22)` = rep52 mRNA in viable i [#/mL]  <br>
+`x(20+(i-1)*22)` = cap mRNA in viable i [#/mL]  <br>
+`x(21+(i-1)*22)` = transgene mRNA in viable i [#/mL]  <br>
+`x(22+(i-1)*22)` = transgene copies in viable i [#/mL]  <br>
+`x(23+(i-1)*22)` = Rep78 in viable i [#/mL]  <br>
+`x(24+(i-1)*22)` = Rep52 in viable i [#/mL]  <br>
+`x(25+(i-1)*22)` = empty rAAV capsids in viable i [#/mL]  <br>
+`x(26+(i-1)*20)` = GOI protein in viable i [#/mL]  <br>
+`x(27+(i-1)*22)` = filled rAAV capsids in viable i [#/mL]  <br>
+`x(29+(i-1)*22)` = transgene copies in nonviable i [#/mL]  <br>
+`x(30+(i-1)*22)` = Rep78 in nonviable i [#/mL]  <br>
+`x(31+(i-1)*22)` = Rep52 in nonviable i [#/mL]  <br>
+`x(32+(i-1)*22)` = empty rAAV capsids in nonviable i [#/mL]  <br>
+`x(33+(i-1)*22)` = filled rAAV capsids in nonviable i [#/mL]  <br>
